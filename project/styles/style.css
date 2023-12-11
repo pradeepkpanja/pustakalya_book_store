@@ -1,0 +1,258 @@
+/* General Body Styling */
+body {
+    background-color: #ffffff;
+    font-family: Arial, sans-serif;
+    font-size: 1.1em; /* Increased font size */
+    margin: 0px; /* Added margin */
+}
+
+/* Navigation Bar Styling */
+/* General Styles for Navbar */
+.navbar {
+    background-color: #f8f9fa; /* Change as per your color scheme */
+    padding: 1.5em 0em; /* Padding for navbar */
+   
+}
+
+/* Flex container for navbar contents */
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Styling for the brand name */
+.navbar-brand {
+    font-size: 2.2em; 
+    color: #5a5a5a; 
+    margin-right: 0em; 
+    margin-left: 0em;
+    font-weight: bold; 
+}
+
+/* Right-aligned content container */
+.navbar-right-content {
+    display: flex;
+    align-items: center;
+}
+
+/* Navbar collapse styling */
+.collapse.navbar-collapse {
+    flex-grow: 0; 
+}
+
+/* Navbar navigation item styles */
+.navbar-nav {
+    margin-left: auto; 
+}
+
+/* Navbar link styling */
+.nav-item .nav-link {
+    color: #5a5a5a; 
+    margin: 0 0.5em; 
+}
+
+/* Search form styling */
+.form-control {
+    margin-right: 0.5em; 
+}
+
+/* Navbar toggler styling for collapse button */
+.navbar-toggler {
+    border-color: rgba(0,0,0,.1);
+    outline: none; 
+}
+
+/* Style adjustments for mobile view */
+@media (max-width: 991px) {
+    .navbar-right-content {
+        flex-direction: column;
+        align-items: flex-start; 
+    }
+    
+    .collapse.navbar-collapse,
+    .d-flex {
+        width: 100%; 
+    }
+    
+    .navbar-nav {
+        margin-left: 0; 
+    }
+    
+    .form-control {
+        width: 100%; 
+        margin: 0.5em 0; 
+    }
+}
+
+/* Search Form Styling */
+.form-control {
+    border-radius: 0.25em;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+}
+
+.btn-outline-success {
+    border-color: #28a745;
+    color: #28a745;
+    font-size: 1.1em;
+}
+
+.btn-outline-success:hover {
+    background-color: #28a745;
+    color: #fff;
+}
+
+.row{
+    display: flex;
+    justify-content: center;
+}
+/* Book Item Styling */
+.book-item {
+    border: 1px solid #ddd;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    margin: 0.5em;
+    padding: 1.5em; 
+    text-align: center;
+    background-color: #fff;
+    width: 250px;
+    display: inline-block;
+    transition: transform 0.3s; 
+}
+
+.book-item:hover {
+    transform: scale(1.05); 
+}
+
+.book-item img {
+    max-width: 100%;
+    height: auto;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 1em;
+    max-height: 200px;
+}
+
+.book-item h2 {
+    color: #333;
+    font-size: 1.4em; 
+    margin-bottom: 0.5em;
+}
+
+.book-item p {
+    font-size: 1.1em; 
+    color: #666;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+    color: #fff;
+    padding: 0.5em 1em;
+    border-radius: 0.25em;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #004085;
+}
+
+/* Footer Styling */
+footer {
+    position: sticky;
+    background-color: #f8f9fa;
+    color: #333;
+    text-align: center;
+    padding: 40px 0; 
+    font-family: 'Arial', sans-serif;
+}
+
+.footer-quote {
+    font-style: italic;
+    margin-bottom: 20px; 
+    font-size: 1.1em; 
+}
+
+.social-media-icons {
+    font-size: 24px;
+    margin-bottom: 20px; 
+}
+
+.social-media-icons a {
+    color: #333;
+    margin: 0 15px; 
+    text-decoration: none;
+}
+
+.social-media-icons a:hover,
+.social-media-icons a:focus {
+    color: #0056b3;
+    text-decoration: none;
+}
+
+/* Footer Text */
+footer p {
+    font-size: 0.85em; 
+}
+
+@media (max-width: 768px) {
+    .social-media-icons {
+        font-size: 20px;
+    }
+    footer p {
+        font-size: 0.8em;
+    }
+    .navbar-brand, .nav-item a {
+        font-size: 1.5em; 
+    }
+    .book-item {
+        width: 100%; /* Full width on mobile */
+    }
+}
+/* Container for book_image and book_details */
+.container1 {
+    display: flex; /* Enables flexbox layout */
+    align-items: center; /* Aligns items vertically in the center */
+    justify-content: center; /* Centers items horizontally */
+    gap: 20px; /* Adds space between the book_image and book_details */
+}
+
+/* Styling for book_image */
+.book_image {
+    flex: 2; /* Takes twice as much space as book_details */
+    text-align: center; /* Centers the image */
+}
+
+.book_image img {
+    width: 100%; /* Makes the image responsive */
+    max-width: 200px; /* Maximum width for the image */
+    height: auto; /* Keeps the image aspect ratio */
+}
+
+/* Styling for book_details */
+.book_details {
+    flex: 1; /* Takes less space compared to book_image */
+    padding: 10px; /* Adds some padding around the details */
+    text-align: left; /* Aligns text to the left */
+}
+
+.book_details h2, .book_details p {
+    margin-bottom: 10px; /* Adds space between each detail */
+}
+
+/* Styling for the Buy Now button */
+.book_details button {
+    background-color: #007bff; /* Blue background color */
+    color: white; /* White text */
+    border: none; /* Removes border */
+    padding: 10px 20px; /* Padding inside the button */
+    text-align: center; /* Centers the text */
+    text-decoration: none; /* Removes underline from text */
+    display: inline-block; /* Makes it inline-block */
+    font-size: 16px; /* Font size for the text */
+    margin: 4px 2px; /* Margin around the button */
+    cursor: pointer; /* Changes cursor to pointer on hover */
+}
+
+
