@@ -83,7 +83,7 @@ app.get('/signup', (req, res) => {
   res.render('signup'); 
 });
 
-app.get('/admin/index/edit/:id', async(req, res) => {
+app.get('/admin/index/edit/:id',isAuthenticated, async(req, res) => {
   try {
     const book = await BookDetails.findById(req.params.id);
     res.render('./admin/edit', { book });
@@ -195,8 +195,18 @@ app.get('/logout', (req, res) => {
   });
 });
 
+//this function is use to stop rendering to next page without login using session.
+function isAuthenticated(req, res, next) {
+  if (req.session.user) {
+   
+    next();
+  } else {
+    
+    res.redirect('/login');
+  }
+}
 //retieve information in admin panel
-app.get('/admin/index', async (req, res) => {
+app.get('/admin/index',isAuthenticated, async (req, res) => {
   try {
     // Fetch all documents from the bookDetails collection
     const books = await BookDetails.find();
@@ -314,7 +324,7 @@ async function sendEmail(toEmail, bookName, totalPrice) {
 }
 
 // Route for handling book purchase
-app.get('/buynow', async (req, res) => {
+app.get('/buynow',isAuthenticated, async (req, res) => {
   try {
     // Extract book details from the request parameters
     const { itemName, itemPrice, userEmail } = req.query;
