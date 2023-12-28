@@ -103,7 +103,7 @@ app.get('/admin/index/edit/:id',isAuthenticated, async(req, res) => {
 async function connectToDatabase() {
   try {
     // Use the Mongoose connect method as a promise
-  await mongoose.connect('mongodb+srv://admin1:Pradeep%401304%3B@crudapi.dprb5cc.mongodb.net/bookStoreUsers');
+  await mongoose.connect(process.env.DB_CONNECTION_STRING);
 
     console.log('Connected to the database');
   } catch (error) {
