@@ -8,6 +8,7 @@ const nodemailer = require('nodemailer');
 const bookStoreUser = require('./model/bookStoreUser');
 const BookDetails = require('./model/bookDetails'); // Import the bookDetails model
 const session = require('express-session');
+require('dotenv').config(); 
 const app = express();
 
 
